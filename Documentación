@@ -18,3 +18,21 @@ Ideas: Consumo de APIs, por ejemplo:
   https://developer.marvel.com/
   
 Nombre del Proyecto: I'm Hungry!
+
+Breve descripción:
+
+  - Planificador semanal de las comidas
+  - tipos de diestas: vegana, vegetariana, cetogenica...
+  - (hay que integrar un calendario)... 
+  - en principio guardamos por dia en local storage
+
+Objetivos:
+
+  1. Crear la app
+  2. Conectarse con la app de comidas
+  3. Crear el componente: tarjetas de comidas
+  4. Vista detalle de un menú.
+  
+  
+
+
