@@ -22,9 +22,9 @@ Nombre del Proyecto: I'm Hungry!
 Breve descripción:
 
   - Planificador semanal de las comidas
-  - tipos de diestas: vegana, vegetariana, cetogenica...
+  - Tipos de dietas: vegana, vegetariana, cetogénica...
   - (hay que integrar un calendario)... 
-  - en principio guardamos por dia en local storage
+  - en principio guardamos por día en local storage
 
 Objetivos:
 
