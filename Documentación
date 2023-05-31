@@ -34,7 +34,7 @@ A que nos gustaría llegar.
 Objetivos iniciales:
 
 Previo al codigo:
-  Crear una maquetación del proyecto en figma.
+  Crear una maquetación del proyecto en figma. Con su propia paleta de colores, etc etc
   
 1 etapa
   1. Crear la app
@@ -46,12 +46,14 @@ Previo al codigo:
   1. Crear el componente buscador
   2. Poder agregar varios productos y buscar en base a esos productos
  
- otros:
+ funcionalidades adicionales:
   1. botones y filtros por categorias
   2. traduccion al español
   3. videos relacionados
   4. estilo personalizado
   5. calorias?
+  6. comida recomendada del día
+  7. ranking de comidas mas vistas, etc
   
   
   
