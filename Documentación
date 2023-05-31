@@ -20,18 +20,39 @@ Ideas: Consumo de APIs, por ejemplo:
 Nombre del Proyecto: I'm Hungry!
 
 Breve descripción:
+  I´m Hungry! será la compañera inseparable de todos los que aman un rico plato de comida.
+  ¿Tenés hambre? ¿No sabes que comer? Simple, mirá que tenes en la alacena, y en la heladera.
+  Cargá los productos en la app y Im Hungry! te mostrará todos los exquisitos platos que 
+  podés hacer. Y, ¡listo!. Ahora solo te queda elegir el mas rico! Eso si, no te olvides de invitarnos. 
 
+A que nos gustaría llegar.
   - Planificador semanal de las comidas
   - Tipos de dietas: vegana, vegetariana, cetogénica...
   - (hay que integrar un calendario)... 
   - en principio guardamos por día en local storage
 
-Objetivos:
+Objetivos iniciales:
 
+Previo al codigo:
+  Crear una maquetación del proyecto en figma.
+  
+1 etapa
   1. Crear la app
-  2. Conectarse con la app de comidas
+  2. Conectarse con la api de comidas
   3. Crear el componente: tarjetas de comidas
   4. Vista detalle de un menú.
+  
+ 2 etapa
+  1. Crear el componente buscador
+  2. Poder agregar varios productos y buscar en base a esos productos
+ 
+ otros:
+  1. botones y filtros por categorias
+  2. traduccion al español
+  3. videos relacionados
+  4. estilo personalizado
+  5. calorias?
+  
   
   
 
