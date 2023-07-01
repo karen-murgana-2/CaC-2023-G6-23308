@@ -1,0 +1,102 @@
+.title,
+.title * {
+  box-sizing: border-box;
+}
+
+.title {
+  width: 50%;
+  margin: auto;
+  height: auto;
+  position: relative;
+}
+
+
+.containerOne {
+  padding: 60px 0px 90px;
+  text-align: center;
+  background-color: #FFEEA5;
+
+}
+
+.p1 {
+  color: #443f2b;
+  text-align: center;
+  font: 400 2rem "Galdeano", sans-serif;
+  margin: 50px 0px 30px;
+  padding: 0px 2px;
+}
+
+
+/** ======== Searchbar ======== */
+
+.searchBar {
+  margin: auto;
+  width: 600px;
+  height: 110px;
+  background: #ffce6f;
+  border-radius: 60px;
+  border-style: solid;
+  border-color: #443f2b;
+  border-width: 3px;
+  width: 600px;
+  height: 80px;
+}
+
+.barra {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lupa {
+  right: 0;
+  height: 60px;
+  padding-right: 15px;
+  align-content: flex-end;
+}
+
+.searchInput {
+  font: 400 40px "Galdeano", sans-serif;
+  color: #443f2b;
+  background-color: none;
+  text-align: left;
+  text-decoration: none;
+  padding: 0px 20px 0px 25px;
+  height: 50px;
+  display: flex;
+  flex-grow: 2;
+  align-self: center;
+  background: none;
+  border: none;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+/** ===================== */
+
+
+@media (max-width: 950px) {
+  .title {
+    width: 65%;
+  }
+}
+@media (max-width: 800px) {
+  .title {
+    width: 80%;
+  }
+  .searchBar {
+    width: 90%;
+    height: 50px;
+    padding: 0px 2px;
+  }
+  .searchInput {
+    width: 65%;
+  }
+.lupa {
+  height: 40px;
+}
+}

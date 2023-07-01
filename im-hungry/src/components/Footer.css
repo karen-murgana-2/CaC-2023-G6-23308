@@ -1,0 +1,29 @@
+
+.footer {
+  border-top: 1px solid #f1c54c;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-self: flex-end;
+  overflow: hidden;
+  background: #f5d375;
+}
+.subtexto{
+  font-size: 1.5rem;
+  color: #666150;
+  
+}
+
+.rectangle-12 {
+  border-top: 1px solid #e4d27c;
+  width: 100%;
+  height: 120px;
+  background: #ffec8b;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  color: #443f2b;
+  text-align: center;
+  font: 400 2rem "Galdeano", sans-serif;
+}
