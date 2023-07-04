@@ -3,6 +3,7 @@ import "./RecipeDetail.css";
 import React, { useEffect, useState } from "react";
 import { get } from "../utils/httpCliente";
 import { Footer } from "../components/Footer";
+import { Spinner } from "../components/Spinner";
 
 export const RecipeDetail = () => {
   let imgURL = "";
@@ -13,36 +14,41 @@ export const RecipeDetail = () => {
   let ingredientArray = [];
 
   const [recipe, setRecipe] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   let { idMeal } = useParams();
-
+  
   useEffect(() => {
     get(`/lookup.php?i=${idMeal}`).then((data) => {
       setRecipe(data);
+      setIsLoading(false);
+
     });
   }, [idMeal]);
 
-  let flagMounted = false;
-  if (recipe != null && !flagMounted) {
-    imgURL = `${recipe.meals[0].strMealThumb}`;
-    recipeName = `${recipe.meals[0].strMeal}`;
-    recipeCategory = `${recipe.meals[0].strCategory}`;
-    recipeArea = `${recipe.meals[0].strArea}`;
-    idMeal = `${recipe.meals[0].idMeal}`;
-    recipeInstructions = `${recipe.meals[0].strInstructions}`;
+  if (isLoading) {
+    return <Spinner />;
+  }
 
-    let index = 1;
-    while (recipe.meals[0]['strIngredient' + index]) {
-      ingredientArray.push({name: recipe.meals[0]['strIngredient' + index], amount: recipe.meals[0]['strMeasure' + index] ? recipe.meals[0]['strMeasure' + index]: ""});
-      index++;
-    }
-    flagMounted = true;
+  imgURL = `${recipe.meals[0].strMealThumb}`;
+  recipeName = `${recipe.meals[0].strMeal}`;
+  recipeCategory = `${recipe.meals[0].strCategory}`;
+  recipeArea = `${recipe.meals[0].strArea}`;
+  idMeal = `${recipe.meals[0].idMeal}`;
+  recipeInstructions = `${recipe.meals[0].strInstructions}`;
+
+  let index = 1;
+  while (recipe.meals[0]["strIngredient" + index]) {
+    ingredientArray.push({
+      name: recipe.meals[0]["strIngredient" + index],
+      amount: recipe.meals[0]["strMeasure" + index]
+        ? recipe.meals[0]["strMeasure" + index]
+        : "",
+    });
+    index++;
   }
 
   return (
-    <div className="containerDetail">
-      
-      {/* <Title /> */}
-
+    <div className="containerDetail" key={idMeal}>
       <div className="containerRecipe">
         <div className="imagenDetalle">
           <div className="imagenRecipe">
@@ -58,11 +64,11 @@ export const RecipeDetail = () => {
         <div className="detailIngredients">
           <h1 className="detailTitles">Ingredients</h1>
           <ul>
-            {
-              ingredientArray.map((ingredient, index) => 
-                <li key={index}>{ingredient.name.trim()}: {ingredient.amount.trim()+'.'}</li>
-              )
-            }
+            {ingredientArray.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.name.trim()}: {ingredient.amount.trim() + "."}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="line" />

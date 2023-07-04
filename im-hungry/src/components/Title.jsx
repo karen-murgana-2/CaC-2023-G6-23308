@@ -9,11 +9,15 @@ export const Title = () => {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault(); 
     get(`/search.php?s=${searchText}`).then((data) => {
       navigate(`/recipe/${data.meals[0].idMeal}`);
+      window.location.reload();
     });
+
     
   };
 
@@ -32,7 +36,9 @@ export const Title = () => {
             name="Search"
             id="searchInput"
             placeholder="Search..."
+            autoComplete="off"
             value={searchText}
+            autoFocus
             onChange={(e)=> setSearchText(e.target.value)}
           />
           <button type="submit" className="buscadorButton">

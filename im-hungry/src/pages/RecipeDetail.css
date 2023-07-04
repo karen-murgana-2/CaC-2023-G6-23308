@@ -6,7 +6,7 @@
 .containerRecipe {
     display: flex;
     flex-direction: column;
-    padding: 30px 0px;
+    padding: 30px 0px 80px;
     padding-left: 100px;
     font-family: "Inter", sans-serif;
     color: #443f2b;

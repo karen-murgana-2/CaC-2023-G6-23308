@@ -11,8 +11,7 @@
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  font: 2rem "Galdeano", sans-serif;
-  padding-right: 85px;
+  font: 400 2.2rem "Galdeano", sans-serif;
 }
 
 .navItems {
@@ -20,9 +19,10 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: end;
+  gap: 3.5rem;
   flex-wrap: nowrap;
-  padding: 5px;
+  padding: 0px 20px;
 }
 
 .icon-magnifying-glass {
@@ -33,21 +33,27 @@
 .navBarItem {
   align-self: center;
 }
-a,a:hover,a::after,a:active{
+
+a,
+a:hover,
+a::after,
+a:active {
   text-decoration: none;
   color: black;
 }
-a:hover{
+
+a:hover {
   font-weight: bold;
 }
+
 .iconLupa {
   width: 45px;
 }
 
 .logoTenedor {
+  padding: 0px 20px;
   width: 70px;
   height: 70px;
-  margin-left: 15px;
 }
 
 .navToggle {
@@ -74,6 +80,7 @@ a:hover{
     height: -webkit-fill-available;
     transform: translateX(-100%);
     transition: 0.3s ease all;
+
   }
 
   .navItems.open {

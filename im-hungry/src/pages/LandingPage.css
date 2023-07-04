@@ -1,4 +1,5 @@
 .containerMain {
     margin: 0;
     background-color: #FFEEA5;
+    scroll-behavior: smooth;
 }

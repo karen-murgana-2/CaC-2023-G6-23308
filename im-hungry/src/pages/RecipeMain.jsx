@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./RecipeMain.css";
 import { get } from "../utils/httpCliente";
-
+import { Spinner } from "../components/Spinner";
 
 export const RecipeMain = () => {
   let imgURL = "";
@@ -11,13 +11,18 @@ export const RecipeMain = () => {
   let recipeArea = "";
   let idMeal = "";
   const [recipe, setRecipe] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     get("/random.php").then((data) => {
-        setRecipe(data);
-      })
+      setRecipe(data);
+      setIsLoading(false);
+    });
   }, []);
 
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   // console.log("recipes name: " + JSON.stringify(recipe.meals[0].strMeal));
   // console.log(imgURL);
@@ -32,7 +37,7 @@ export const RecipeMain = () => {
   }
 
   return (
-    <div className="containerDos">
+    <div className="containerDos" >
       <div className="pictureContainer">
         <img src={imgURL} alt="recipe" srcSet="" id="" />
       </div>
