@@ -10,12 +10,10 @@
   position: relative;
 }
 
-
 .containerOne {
   padding: 60px 0px 90px;
   text-align: center;
-  background-color: #FFEEA5;
-
+  background-color: #ffeea5;
 }
 
 .p1 {
@@ -25,7 +23,6 @@
   margin: 50px 0px 30px;
   padding: 0px 2px;
 }
-
 
 /** ======== Searchbar ======== */
 
@@ -76,8 +73,12 @@
   outline: none;
 }
 
-/** ===================== */
+.buscadorButton {
+  background: none;
+  border: none;
+}
 
+/** ===================== */
 
 @media (max-width: 950px) {
   .title {
@@ -96,7 +97,7 @@
   .searchInput {
     width: 65%;
   }
-.lupa {
-  height: 40px;
-}
+  .lupa {
+    height: 40px;
+  }
 }

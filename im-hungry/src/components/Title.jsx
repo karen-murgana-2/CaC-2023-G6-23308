@@ -1,16 +1,30 @@
 /* Code generated with AutoHTML Plugin for Figma */
 import "./Title.css";
+import { get } from "../utils/httpCliente";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Title = () => {
+
+  const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    get(`/search.php?s=${searchText}`).then((data) => {
+      navigate(`/recipe/${data.meals[0].idMeal}`);
+    });
+    
+  };
+
   return (
     <div className="containerOne">
-      <img className="title" src="/title.png" alt="" srcset="" />
+      <img className="title" src="/title.png" alt="" srcSet="" />
 
       <p className="p1">
-        Search by recipe, by ingredient <br />
-        or by category
+        Search recipe by name
       </p>
-      <div className="searchBar">
+      <form className="searchBar" onSubmit={handleSubmit}>
         <div className="barra">
           <input
             className="searchInput"
@@ -18,10 +32,14 @@ export const Title = () => {
             name="Search"
             id="searchInput"
             placeholder="Search..."
+            value={searchText}
+            onChange={(e)=> setSearchText(e.target.value)}
           />
-          <img src="lupa.png" alt="" srcset="" className="lupa" />
+          <button type="submit" className="buscadorButton">
+            <img src="/lupa.png" alt="" srcSet="" className="lupa" />
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

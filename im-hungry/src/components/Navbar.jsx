@@ -11,7 +11,7 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <a href="/" className="navBarItem">
-        <img className="logoTenedor" src="logoForkSpoon.png" />
+        <img className="logoTenedor" src="/logoForkSpoon.png" alt=""/>
       </a>
       <div className={`navItems ${isOpen && "open"}`}>
         <a href="/" className="navBarItem">

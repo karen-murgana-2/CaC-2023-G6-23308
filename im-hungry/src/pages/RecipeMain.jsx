@@ -34,7 +34,7 @@ export const RecipeMain = () => {
   return (
     <div className="containerDos">
       <div className="pictureContainer">
-        <img src={imgURL} alt="image not loading" srcset="" id="" />
+        <img src={imgURL} alt="recipe" srcSet="" id="" />
       </div>
       <div className="detailsContainer">
         <div className="recipeName">

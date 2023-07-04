@@ -2,16 +2,7 @@ import { useParams } from "react-router-dom";
 import "./RecipeDetail.css";
 import React, { useEffect, useState } from "react";
 import { get } from "../utils/httpCliente";
-import { Navbar } from "../components/Navbar";
-import { Title } from "../components/Title";
 import { Footer } from "../components/Footer";
-
-/** 
- * TODO: Hacer lista de ingredientes más cantidades, iterando las claves
- * en el json y usando de condicional:
- * strMeasure[n] != " "
- * strIngredient[n] != ""
- */
 
 export const RecipeDetail = () => {
   let imgURL = "";
@@ -19,8 +10,7 @@ export const RecipeDetail = () => {
   let recipeCategory = "";
   let recipeArea = "";
   let recipeInstructions = "";
-  // let recipeIngredients = [];
-  // let recipeAmounts = [];
+  let ingredientArray = [];
 
   const [recipe, setRecipe] = useState(null);
   let { idMeal } = useParams();
@@ -40,22 +30,23 @@ export const RecipeDetail = () => {
     idMeal = `${recipe.meals[0].idMeal}`;
     recipeInstructions = `${recipe.meals[0].strInstructions}`;
 
-    //console.log(`${recipe.meals[0].strIngredient}`)
-
+    let index = 1;
+    while (recipe.meals[0]['strIngredient' + index]) {
+      ingredientArray.push({name: recipe.meals[0]['strIngredient' + index], amount: recipe.meals[0]['strMeasure' + index] ? recipe.meals[0]['strMeasure' + index]: ""});
+      index++;
+    }
     flagMounted = true;
   }
 
-  /** TODO: Arreglar para no cargar varias veces el navbar, el title y el footer */
-
   return (
     <div className="containerDetail">
-      <Navbar />
-      <Title />
+      
+      {/* <Title /> */}
 
       <div className="containerRecipe">
         <div className="imagenDetalle">
           <div className="imagenRecipe">
-            <img src={imgURL} alt="" srcset="" />
+            <img src={imgURL} alt="" srcSet="" />
           </div>
           <div className="detailText">
             <div className="detailTitles">{recipeName}</div>
@@ -66,6 +57,13 @@ export const RecipeDetail = () => {
         <div className="line" />
         <div className="detailIngredients">
           <h1 className="detailTitles">Ingredients</h1>
+          <ul>
+            {
+              ingredientArray.map((ingredient, index) => 
+                <li key={index}>{ingredient.name.trim()}: {ingredient.amount.trim()+'.'}</li>
+              )
+            }
+          </ul>
         </div>
         <div className="line" />
         <div className="detailInstructions">
