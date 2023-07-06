@@ -21,7 +21,6 @@ export const RecipeDetail = () => {
     get(`/lookup.php?i=${idMeal}`).then((data) => {
       setRecipe(data);
       setIsLoading(false);
-
     });
   }, [idMeal]);
 
