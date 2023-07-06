@@ -4,37 +4,29 @@ Nombre del Grupo:
 
 Integrantes:
 * Karen Murgana
+* Lucas Joel Mac Gregor
 * Pablo Llanos
 * Patricio Manin
 * Ezequiel Calzia 
 * Maximiliano Torres
-* Lucas Joel Mac Gregor
 
 Fecha de entrega: 3/4 de Julio de 2023
 
 Ideas: Consumo de APIs, por ejemplo:
   https://themealdb.com/api.php
-  https://www.thecocktaildb.com/
-  https://developer.marvel.com/
   
 Nombre del Proyecto: I'm Hungry!
 
 Breve descripción:
-  I´m Hungry! será la compañera inseparable de todos los que aman un rico plato de comida.
-  ¿Tenés hambre? ¿No sabes que comer? Simple, mirá que tenes en la alacena, y en la heladera.
-  Cargá los productos en la app y Im Hungry! te mostrará todos los exquisitos platos que 
-  podés hacer. Y, ¡listo!. Ahora solo te queda elegir el mas rico! Eso si, no te olvides de invitarnos. 
+  I´m Hungry! es una aplicación web que sirve para encontrar nuevas recetas,
+  acorde a distintas categorías y también por nombre de la receta.
 
 A que nos gustaría llegar.
-  - Planificador semanal de las comidas
   - Tipos de dietas: vegana, vegetariana, cetogénica...
-  - (hay que integrar un calendario)... 
-  - en principio guardamos por día en local storage
-
-Objetivos iniciales:
+  - Recetarios e ingredientes
 
 Previo al codigo:
-  Crear una maquetación del proyecto en figma. Con su propia paleta de colores, etc etc
+  Maquetación del proyecto en figma.
   
 1 etapa
   1. Crear la app
@@ -45,15 +37,14 @@ Previo al codigo:
  2 etapa
   1. Crear el componente buscador
   2. Poder agregar varios productos y buscar en base a esos productos
+  3. Refinar front
+  4. Agregar diseño responsive
+  5. Refactorización del código
  
  funcionalidades adicionales:
   1. botones y filtros por categorias
-  2. traduccion al español
-  3. videos relacionados
-  4. estilo personalizado
-  5. calorias?
-  6. comida recomendada del día
-  7. ranking de comidas mas vistas, etc
+  2. filtro por nombre receta
+  3. comida al azar
   
   
   
