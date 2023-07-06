@@ -10,12 +10,7 @@
     {
       "src": "logoForkSpoon.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logoForkSpoon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "110x110"
     }
   ],
   "start_url": ".",

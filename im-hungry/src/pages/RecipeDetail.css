@@ -66,7 +66,8 @@
         padding: 10px 0px;
     }
 
-    .detailInstructions {
+    .detailInstructions,
+    .detailIngredients {
         width: 80%;
     }
 }
@@ -87,18 +88,27 @@
         text-align: center;
     }
 
-    .detailInstructions {
+    .detailInstructions,
+    .detailIngredients {
         width: 80%;
     }
 
     .line {
         width: 80%;
     }
-
 }
 
 @media (max-width: 450px) {
+    .detailIngredients {
+        margin: 0;
+        padding: 0;
+    }
+
     .detailInstructions {
         width: 100%;
+    }
+
+    .containerRecipe {
+        padding: 30px 5px 50px;
     }
 }

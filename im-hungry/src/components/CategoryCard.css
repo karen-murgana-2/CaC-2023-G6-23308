@@ -1,0 +1,116 @@
+.categoryCard {
+    padding: 20px 0px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(249, 220, 92, 0.8);
+    width: 90%;
+    display: flex;
+    max-height: 220px;
+    border: 1px solid #f1c54c;
+    border-radius: 15px;
+}
+.categoryCard:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.categoryImg {
+    border-right: 1px solid #c7a538;
+    padding: 15px;
+}
+
+.categoryImg>img {
+    border-radius: 10px;
+}
+
+.categoryDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: #443f2b;
+}
+
+.catDescriptionText {
+    overflow: auto;
+    padding-right: 15px;
+    font: 200 20px "Inter", sans-serif;
+}
+
+.catDescriptionTitle {
+    font: 600 35px "Inter", sans-serif;
+    padding-bottom: 10px;
+}
+
+.catDescriptionTitle>a {
+    color: #4e4934;
+}
+
+.catDescriptionTitle>a:hover {
+    color: #1f1c13;
+}
+
+
+
+@media (max-width: 950px) {
+    .categoryCard {
+        /* flex-direction: column;
+        text-align: center;
+        height: 1200px; */
+        width: 100%;
+
+    }
+
+    .categoryImg {
+        /* padding: 30px 50px; */
+        text-align: center;
+        align-self: center;
+        /* border-right: 1px solid rgb(199, 165, 56);
+        border-right: none; */
+        /* border-bottom: 1px solid rgb(199, 165, 56); */
+    }
+
+    .categoryImg>img {
+        width: 220px;
+        /* width: 600px; */
+    }
+}
+
+@media (max-width: 700px) {
+    .categoryCard {
+        flex-direction: column;
+        text-align: center;
+        max-height: 500px;
+    }
+
+    .categoryDescription {
+        max-height: auto;
+        overflow: auto;
+    }
+
+    .categoryImg {
+        text-align: center;
+        align-self: center;
+        border-right: none;
+        border-bottom: 1px solid rgb(199, 165, 56);
+    }
+
+    .categoryImg>img {
+        width: 220px;
+        /* width: 600px; */
+    }
+
+    .categoryImg>img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 450px) {
+    .categoryImg {
+        padding: 30px 10px;
+    }
+    .categoryDescription {
+        padding: 5px;
+
+    }
+}

@@ -1,0 +1,85 @@
+.byCategoryCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #fae06b;
+    border: 1px solid #f1c54c;
+    height: 350px;
+    width: 250px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.imgByCat>img {
+    border-bottom: 1px solid #c7a538;
+    width: 250px;
+    border-radius: 15px 15px 0 0;
+}
+
+.titleByCat {
+    font: 600 25px "Inter", sans-serif;
+    color: #443f2b;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.titleByCat:hover {
+    overflow: visible;
+    height: auto;
+    background-color: #fae06b;
+    z-index: 9999;
+    border-radius: 15px;
+}
+
+.byCategoryCard:hover {
+    min-height: 350px;
+    height: fit-content;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.byCategoryCard:active {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media (hover:none),
+(hover:on-demand) {
+    .byCategoryCard {
+        min-height: 350px;
+        height: fit-content;
+    }
+}
+
+@media (max-width: 560px) {
+    .byCategoryCard {
+        min-height: 40vh;
+        height: fit-content;
+        width: 80vw;
+
+    }
+
+    .imgByCat>img {
+        min-height: 40vh;
+        height: fit-content;
+        width: 80vw;
+        object-fit: cover;
+
+    }
+
+    .titleByCat {
+        font: 600 30px "Inter", sans-serif;
+
+    }
+
+}
+
+@media (max-width: 330px) {
+    .byCategoryCard {
+        width: 80vw;
+
+    }
+
+    .imgByCat>img {
+        max-height: 100px;
+        object-fit: cover;
+    }
+
+}

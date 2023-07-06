@@ -1,68 +1,65 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./RecipeDetail.css";
 import React, { useEffect, useState } from "react";
 import { get } from "../utils/httpCliente";
-import { Footer } from "../components/Footer";
 import { Spinner } from "../components/Spinner";
 
 export const RecipeDetail = () => {
-  let imgURL = "";
-  let recipeName = "";
-  let recipeCategory = "";
-  let recipeArea = "";
-  let recipeInstructions = "";
-  let ingredientArray = [];
-
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   let { idMeal } = useParams();
-  
+
   useEffect(() => {
-    get(`/lookup.php?i=${idMeal}`).then((data) => {
-      setRecipe(data);
-      setIsLoading(false);
-    });
-  }, [idMeal]);
+    if (isLoading) {
+      get(`/lookup.php?i=${idMeal}`).then((data) => {
+        setRecipe(data.meals[0]);
+        setIsLoading(false);
+      });
+    }
+  }, [idMeal, isLoading]);
 
   if (isLoading) {
     return <Spinner />;
   }
 
-  imgURL = `${recipe.meals[0].strMealThumb}`;
-  recipeName = `${recipe.meals[0].strMeal}`;
-  recipeCategory = `${recipe.meals[0].strCategory}`;
-  recipeArea = `${recipe.meals[0].strArea}`;
-  idMeal = `${recipe.meals[0].idMeal}`;
-  recipeInstructions = `${recipe.meals[0].strInstructions}`;
+  let ingredientArray = [];
+  let recipeInstructions = `${recipe.strInstructions}`;
 
   let index = 1;
-  while (recipe.meals[0]["strIngredient" + index]) {
+  while (recipe["strIngredient" + index]) {
     ingredientArray.push({
-      name: recipe.meals[0]["strIngredient" + index],
-      amount: recipe.meals[0]["strMeasure" + index]
-        ? recipe.meals[0]["strMeasure" + index]
-        : "",
+      name: recipe["strIngredient" + index],
+      amount: recipe["strMeasure" + index] ? recipe["strMeasure" + index] : "",
     });
     index++;
   }
 
   return (
-    <div className="containerDetail" key={idMeal}>
+    <div className="containerDetail" key={recipe.idMeal}>
       <div className="containerRecipe">
         <div className="imagenDetalle">
           <div className="imagenRecipe">
-            <img src={imgURL} alt="" srcSet="" />
+            <img
+              src={recipe.strMealThumb}
+              alt={recipe.strMeal}
+              srcSet={recipe.strMealThumb}
+            />
           </div>
           <div className="detailText">
-            <div className="detailTitles">{recipeName}</div>
-            <div className="detailSubtitle">Category: {recipeCategory}</div>
-            <div className="detailSubtitle">Area: {recipeArea}</div>
+            <div className="detailTitles">{recipe.strMeal}</div>
+            <div className="detailSubtitle">
+              Category:{" "}
+              <Link to={`/categories/${recipe.strCategory}`} className="card">
+                {recipe.strCategory}
+              </Link>
+            </div>
+            <div className="detailSubtitle">Area: {recipe.strArea}</div>
           </div>
         </div>
         <div className="line" />
         <div className="detailIngredients">
           <h1 className="detailTitles">Ingredients</h1>
-          <ul>
+          <ul className="ingredients">
             {ingredientArray.map((ingredient, index) => (
               <li key={index}>
                 {ingredient.name.trim()}: {ingredient.amount.trim() + "."}
@@ -76,8 +73,6 @@ export const RecipeDetail = () => {
           {recipeInstructions}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

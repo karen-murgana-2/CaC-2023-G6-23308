@@ -1,0 +1,25 @@
+.gridContainerByCat {
+    background-color: #ffeea5;
+    min-height: 100vh;
+}
+
+.gridByCat {
+    padding: 50px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .gridByCat {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 330px) {
+    .categoriesGridTitle {
+        font: 600 35px "Inter", sans-serif;
+        word-wrap: break-word;
+    }
+}

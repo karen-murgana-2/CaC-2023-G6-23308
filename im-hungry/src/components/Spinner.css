@@ -3,9 +3,9 @@
     background-color: #f9dc5ccc;
     display: flex;
     align-items: center;
-    height: 500px;
     margin: auto;
     padding: 50px 0px;
+    height: 100vh;
 }
 
 .spinning {

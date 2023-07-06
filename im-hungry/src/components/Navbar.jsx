@@ -10,11 +10,10 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const handleRandom = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     get("/random.php").then((data) => {
       console.log("data: " + JSON.stringify(data));
       navigate(`/recipe/${data.meals[0].idMeal}`);
-      //window.location.reload();
     });
   };
 

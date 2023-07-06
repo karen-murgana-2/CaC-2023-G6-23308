@@ -1,20 +1,18 @@
-
-.footer {
+.containerFooter {
   border-top: 1px solid #f1c54c;
   width: 100%;
   height: 160px;
   display: flex;
-  align-self: flex-end;
   overflow: hidden;
   background: #f5d375;
 }
-.subtexto{
+
+.subtexto {
   font-size: 1.5rem;
   color: #666150;
-  
 }
 
-.rectangle-12 {
+.subContainerFooter {
   border-top: 1px solid #e4d27c;
   width: 100%;
   height: 120px;
