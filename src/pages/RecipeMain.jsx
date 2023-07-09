@@ -37,11 +37,16 @@ export const RecipeMain = () => {
         </div>
         <div className="recipeCategory">
           Category:{" "}
-          <Link to={`/categories/${recipe.strCategory}`} className="card">
+          <Link to={`/categories/c=${recipe.strCategory}`} className="card">
             {recipe.strCategory}
           </Link>
         </div>
-        <div className="recipeCategory">Area: {recipe.strArea}</div>
+        <div className="recipeCategory">
+          Area:{" "}
+          <Link to={`/categories/a=${recipe.strArea}`} className="card">
+            {recipe.strArea}
+          </Link>
+        </div>
       </div>
     </div>
   );

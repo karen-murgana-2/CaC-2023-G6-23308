@@ -23,8 +23,6 @@ export const RecipeDetail = () => {
   }
 
   let ingredientArray = [];
-  let recipeInstructions = `${recipe.strInstructions}`;
-
   let index = 1;
   while (recipe["strIngredient" + index]) {
     ingredientArray.push({
@@ -49,11 +47,16 @@ export const RecipeDetail = () => {
             <div className="detailTitles">{recipe.strMeal}</div>
             <div className="detailSubtitle">
               Category:{" "}
-              <Link to={`/categories/${recipe.strCategory}`} className="card">
+              <Link to={`/categories/c=${recipe.strCategory}`} className="card">
                 {recipe.strCategory}
               </Link>
             </div>
-            <div className="detailSubtitle">Area: {recipe.strArea}</div>
+            <div className="detailSubtitle">
+              Area:{" "}
+              <Link to={`/categories/a=${recipe.strArea}`} className="card">
+                {recipe.strArea}
+              </Link>
+            </div>
           </div>
         </div>
         <div className="line" />
@@ -62,7 +65,10 @@ export const RecipeDetail = () => {
           <ul className="ingredients">
             {ingredientArray.map((ingredient, index) => (
               <li key={index}>
-                {ingredient.name.trim()}: {ingredient.amount.trim() + "."}
+                <Link to={`/categories/i=${ingredient.name}`} className="card">
+                  {ingredient.name.trim()}
+                </Link>
+                : {ingredient.amount.trim() + "."}
               </li>
             ))}
           </ul>
@@ -70,7 +76,7 @@ export const RecipeDetail = () => {
         <div className="line" />
         <div className="detailInstructions">
           <h1 className="detailTitles">Instructions</h1>
-          {recipeInstructions}
+          {recipe.strInstructions}
         </div>
       </div>
     </div>

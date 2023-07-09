@@ -3,7 +3,8 @@
     flex-direction: column;
     background-color: #fae06b;
     border: 1px solid #f1c54c;
-    height: 350px;
+    min-height: 350px;
+    height: fit-content;
     width: 250px;
     border-radius: 15px;
     text-align: center;
@@ -19,7 +20,6 @@
     font: 600 25px "Inter", sans-serif;
     color: #443f2b;
     padding: 10px;
-    overflow: hidden;
 }
 
 .titleByCat:hover {
@@ -44,16 +44,13 @@
 (hover:on-demand) {
     .byCategoryCard {
         min-height: 350px;
-        height: fit-content;
     }
 }
 
 @media (max-width: 560px) {
     .byCategoryCard {
         min-height: 40vh;
-        height: fit-content;
         width: 80vw;
-
     }
 
     .imgByCat>img {
@@ -61,12 +58,10 @@
         height: fit-content;
         width: 80vw;
         object-fit: cover;
-
     }
 
     .titleByCat {
         font: 600 30px "Inter", sans-serif;
-
     }
 
 }
@@ -74,7 +69,6 @@
 @media (max-width: 330px) {
     .byCategoryCard {
         width: 80vw;
-
     }
 
     .imgByCat>img {
