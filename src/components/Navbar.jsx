@@ -12,8 +12,8 @@ export const Navbar = () => {
   const handleRandom = (e) => {
     e.preventDefault();
     get("/random.php").then((data) => {
-      console.log("data: " + JSON.stringify(data));
       navigate(`/recipe/${data.meals[0].idMeal}`);
+      window.location.reload();
     });
   };
 
