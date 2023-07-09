@@ -10,9 +10,9 @@ Integrantes:
 * Ezequiel Calzia 
 * Maximiliano Torres
 
-Fecha de entrega: 3/4 de Julio de 2023
+Fecha de entrega: 6 de Julio de 2023
 
-Ideas: Consumo de APIs, por ejemplo:
+Consumo de APIs:
   https://themealdb.com/api.php
   
 Nombre del Proyecto: I'm Hungry!
@@ -21,7 +21,7 @@ Breve descripción:
   I´m Hungry! es una aplicación web que sirve para encontrar nuevas recetas,
   acorde a distintas categorías y también por nombre de la receta.
 
-A que nos gustaría llegar.
+Características:
   - Tipos de dietas: vegana, vegetariana, cetogénica...
   - Recetarios e ingredientes
 
@@ -41,8 +41,8 @@ Previo al codigo:
   4. Agregar diseño responsive
   5. Refactorización del código
  
- funcionalidades adicionales:
-  1. botones y filtros por categorias
+funcionalidades adicionales:
+  1. botones y filtros por categorías
   2. filtro por nombre receta
   3. comida al azar
   
