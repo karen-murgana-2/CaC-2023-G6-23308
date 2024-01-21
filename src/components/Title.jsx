@@ -10,8 +10,8 @@ export const Title = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     get(`/search.php?s=${searchText}`).then((data) => {
-      window.location.reload();
       navigate(`/recipe/${data.meals[0].idMeal}`);
+      // window.location.reload();
     });
   };
 

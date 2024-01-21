@@ -32,6 +32,7 @@ export const RecipeDetail = () => {
     index++;
   }
 
+  window.scrollTo(0, 0);
   return (
     <div className="containerDetail" key={recipe.idMeal}>
       <div className="containerRecipe">

@@ -23,7 +23,7 @@ export const ByCategory = () => {
   if (isLoading) {
     return <Spinner />;
   }
-
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="gridContainerByCat">
